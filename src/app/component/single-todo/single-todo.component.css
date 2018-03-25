@@ -1,0 +1,65 @@
+.todo__item {
+  margin-right: 20px;
+  margin-left: 20px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  position: relative;
+  border-bottom: 1px solid #eee;
+}
+
+
+
+.content-area {
+  line-height: 20px;
+}
+
+.checkbox {
+  margin: 5px auto;
+  display: block;
+  border: 1px solid #ddd;
+  width: 15px;
+  height: 15px;
+  border-radius: 10px;
+  background-color: white;
+  transition: background-color 150ms;
+}
+
+.checkbox:hover {
+  background-color: #efefef;
+}
+
+.checkbox:active {
+  background-color: #efefef;
+}
+
+.content-area {
+  font-size: 17px;
+  font-weight: 300;
+}
+
+.todo__item--done {
+  text-decoration: line-through;
+  color: #efefef;
+}
+
+.checkbox--ticked{
+  background-color: #efefef;
+}
+
+.checkbox--unticked{
+  background-color: white;
+}
+
+.edit-area button{
+  color: #fff;
+}
+
+.edit-area input{
+  font-size: 17px;
+  padding: 4px 0 6px 0;
+  font-weight: 300;
+}
+
+.btn__small{
+  font-size: 10px;
+}

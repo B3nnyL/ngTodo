@@ -1,0 +1,14 @@
+<div class="row todo__item">
+  <div class="col-md-1">
+      <span class="checkbox" [ngClass]="{'todo__item--done': item.ticked, 'undo': !item.ticked, 'checkbox--ticked': item.ticked, 'checkbox-unticked': !item.unticked}" (click)="onTick($event)">
+        </span>
+  </div>
+  <div *ngIf="!isEditting" 
+  class="content-area col-md-10" 
+  [ngClass]="{'todo__item--done': item.ticked, 'undo': !item.ticked}" 
+  (click)="toggleInput()">{{item.content}}</div> <button class="btn btn__small" (click)="onDelete($event)">Delete</button>
+  <div *ngIf="isEditting" class="col-md-10 edit-area">
+    <input type="text" [value]="item.content" (input)="editContent(content.value)" #content>
+    <button class="btn btn-danger" (click)="onUpdate($event)">Save</button>
+  </div>
+</div>

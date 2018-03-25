@@ -1,0 +1,11 @@
+<div class="container todo-container">
+<h2>My List</h2>
+<single-todo  *ngFor="let item of list" 
+[item]="item" 
+(tick)="onHandleTick($event)" 
+(update)="onHandleUpdate($event)" 
+(delete)="onHandleDelete($event)">
+</single-todo>
+<add-todo (add)="onHandleAdd($event)"></add-todo>
+</div>
+

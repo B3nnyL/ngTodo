@@ -1,0 +1,18 @@
+.todo-editor{
+  margin-top: 10px;
+  margin-left: 20px;
+}
+.todo__controller {
+  margin-top: 10px;
+}
+.todo__controller a {
+  margin-left: 15px;
+  color:grey;
+}
+.form-control{
+  border: 1px solid #eee !important;
+}
+button{
+  color: #fff;
+  margin-bottom: 10px;
+}
