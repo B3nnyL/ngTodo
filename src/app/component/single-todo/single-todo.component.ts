@@ -1,4 +1,4 @@
-import { todo } from './../../model/todo';
+import { Todo } from './../../model/todo';
 import { Component, Input, Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 
@@ -9,42 +9,42 @@ import { EventEmitter } from '@angular/core';
 })
 export class SingleTodoComponent {
   @Input()
-  item: todo;
+  item: Todo;
 
   @Output()
-  tick: EventEmitter<todo> = new EventEmitter();
+  tick: EventEmitter<Todo> = new EventEmitter();
 
   @Output()
-  update: EventEmitter<todo> = new EventEmitter();
+  update: EventEmitter<Todo> = new EventEmitter();
 
   @Output()
-  delete: EventEmitter<todo> = new EventEmitter();
+  delete: EventEmitter<Todo> = new EventEmitter();
 
-  isEditting:boolean = false;
+  isEditting: boolean = false;
   constructor() { }
 
-  onTick(item: todo){
+  onTick(item: Todo) {
     this.item.ticked = !this.item.ticked;
     this.tick.emit(this.item);
   }
 
-  onUpdate(){
-    if(this.item.content.length === 0){
-      alert("The input field is empty");
-    } else{
+  onUpdate() {
+    if (this.item.content.length === 0) {
+      alert('The input field is empty');
+    } else {
       this.update.emit(this.item);
     }
   }
 
-  onDelete(){
+  onDelete() {
     this.delete.emit(this.item);
   }
 
-  toggleInput(){
+  toggleInput() {
     this.isEditting = !this.isEditting;
   }
 
-  editContent(content: string){
+  editContent(content: string) {
     this.item.content = content;
   }
 }

@@ -3,7 +3,7 @@ import {
   OnInit
 } from '@angular/core';
 import {
-  todo
+  Todo
 } from '../../model/todo';
 import {
   appService
@@ -15,25 +15,25 @@ import {
   styleUrls: ['./todos-container.component.css']
 })
 export class TodosContainerComponent implements OnInit {
-  list: todo[];
+  list: Todo[];
   title = 'app';
   constructor(private service: appService) {}
   ngOnInit() {
-    this.service.getTodos().subscribe((data: todo[]) => this.list = data)
+    this.service.getTodos().subscribe((data: Todo[]) => this.list = data);
   }
-  onHandleTick(event: todo){
+  onHandleTick(event: Todo) {
     console.log(event);
     this.service.updateTodos(event);
   }
-  onHandleUpdate(event: todo){
+  onHandleUpdate(event: Todo) {
     console.log(event);
     this.service.updateTodos(event);
   }
-  onHandleAdd(event: todo){
+  onHandleAdd(event: Todo) {
     console.log('event' + event);
     this.service.addTodo(event);
   }
-  onHandleDelete(event: todo){
+  onHandleDelete(event: Todo) {
     console.log('delete' + event);
     this.service.deleteTodo(event);
   }

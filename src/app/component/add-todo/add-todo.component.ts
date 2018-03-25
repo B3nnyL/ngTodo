@@ -1,4 +1,4 @@
-import { todo } from './../../model/todo';
+import { Todo } from './../../model/todo';
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
@@ -6,23 +6,22 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
   templateUrl: './add-todo.component.html',
   styleUrls: ['./add-todo.component.css']
 })
-export class AddTodoComponent  {
-  newTodo: todo;
+export class AddTodoComponent {
+  newTodo: Todo;
   isAdding: boolean = false;
-  content: string="";
+  content: string = '';
 
   @Output()
-  add: EventEmitter<todo> = new EventEmitter();
-  
-  toggleAddInput(){
+  add: EventEmitter<Todo> = new EventEmitter();
+  toggleAddInput () {
     this.isAdding = !this.isAdding;
-    this.content = "";
+    this.content = '';
   }
 
-  onAdd($event:string){
-    if(this.content.length === 0){
-      alert("The input field is empty");
-    }else{
+  onAdd ($event: string) {
+    if (this.content.length === 0) {
+      alert('The input field is empty');
+    } else {
       console.log(event);
       this.newTodo = {content: this.content, ticked: false};
       this.add.emit(this.newTodo);

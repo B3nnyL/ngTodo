@@ -9,5 +9,4 @@ import { appService } from './container/app.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  
 }

@@ -1,5 +1,5 @@
-export interface todo{
-  content: string,
-  ticked: boolean,
-  id?: string,
+export interface Todo {
+  content: string;
+  ticked: boolean;
+  id?: string;
 }
